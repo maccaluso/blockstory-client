@@ -1,0 +1,73 @@
+body { -webkit-fon-smoothing: antialiased; }
+
+/**********************/
+/* HEADLINE DIRECTIVE */
+/**********************/
+
+.headline-container {
+	@include defaultElementBackground();
+
+	.headline-logo {
+		position: absolute;
+		@include defaultElementBackground();
+		top: $basePadding*2;
+		right: $basePadding*2;
+	}
+
+	.headline-about-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: $basePadding*2;
+		color: $white;
+		font-size: $baseFontSize*1.5;
+
+		.headline-about-link-flag:hover { cursor: pointer; }
+		.headline-about-content {
+			background: $transparentBlack75;
+			padding: $basePadding;
+			opacity: 0;
+			@include transition( all 100ms ease-in-out );
+		}
+		.headline-about-content.visible { opacity: 1; }
+	}
+
+	.headline-main-title { 
+	    position: absolute; 
+	    bottom: 0; 
+	    background: $transparentBlack50; 
+	    color: $white; 
+	    margin-bottom: 0; 
+	    padding: 0 $basePadding;
+	    text-align: center;
+	    height: 60%;
+
+	    .headline-sharing {
+	    	a { 
+	    		padding: $basePadding - 10;
+	    		margin: $basePadding*2 0;
+	    		background: $pink;
+	    		border: 1px solid $pink;
+	    		color: $white;
+	    		font-weight: 300;
+	    		@include transition( all 500ms ease-in-out );
+	    	}
+	    	a:hover { background: transparent; }
+	    	.fb:before { content: 'Share on facebook'; }
+	    	.tw:before { content: 'Share on twitter'; }
+	    }
+	    .headline-scroll-down {
+	    	background: url(../img/u213.png) no-repeat 50% transparent;
+	    	height: 100px;
+	    	min-width: 100px;
+	    	padding: $basePadding;
+	    }
+	    .headline-scroll-down:hover { cursor: pointer; opacity: 0.75; }
+	}
+}
+
+/*****************/
+/* MAP DIRECTIVE */
+/*****************/
+
+// .angular-google-map-container { height: 200px; }

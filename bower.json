@@ -1,0 +1,30 @@
+{
+  "name": "Blockstory Client",
+  "version": "0.0.1",
+  "main": "dist/index.html",
+  "authors": [
+    "Gianluca Macaluso <maccaluso@gmail.com>"
+  ],
+  "description": "",
+  "keywords": [
+    "angular",
+    "territorial storytelling"
+  ],
+  "license": "MIT",
+  "homepage": "www.gianlucamacaluso.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.5",
+    "webfontloader": "~1.6.10",
+    "angular-scroll": "~0.7.3",
+    "angular-google-maps": "~2.2.1"
+  }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it" ng-app="app">
+
+  <head>
+    <style>.ng-hide { display: none!important; }</style>
+    <meta charset="utf-8">
+    <title ng-bind="title"></title>
+
+    <link href="/css/vendor.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <style ng-bind="style"></style>
+    <link href="/css/custom.css" rel="stylesheet">
+
+    <base href="/" />
+  </head>
+
+  <body>
+
+    <div id="main" class="container-fluid" ui-view></div>
+
+    <script src="/js/vendor.min.js"></script>
+    <script src="/js/app.min.js"></script>
+    
+  </body>
+
+</html>
