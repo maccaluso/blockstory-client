@@ -28,3 +28,6 @@ node_modules
 
 # Bower Frontend
 bower_components
+
+# Sass cache
+.sass-cache
