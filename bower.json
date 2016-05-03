@@ -25,6 +25,7 @@
     "bootstrap": "~3.3.5",
     "webfontloader": "~1.6.10",
     "angular-scroll": "~0.7.3",
-    "angular-google-maps": "~2.2.1"
+    "angular-google-maps": "~2.2.1",
+    "angular-sanitize": "^1.5.5"
   }
 }

@@ -6,13 +6,14 @@
         .directive('text', function($window){
             return {
                 restrict: 'AEC',
-		        template: '<p></p>',
+		        template: '<p ng-bind-html="directiveText"></p>',
+                replace: true,
                 scope: {
                     counter: '='
                 },
 		        link: function(scope, element, attrs){
-                    var options = scope.$parent.rowCtrl.optionsT[scope.counter];
-		            element.html(options.txt);
+                    var opt = scope.$parent.rowCtrl.optionsT[scope.counter];
+                    scope.directiveText = opt.txt;
 		        }
             }
         })

@@ -10,18 +10,20 @@
         var otherwise = '/404';
         routerHelper.configureStates(getStates(), otherwise);
 
-        var promises = [dataservice.getStyles()];
+        var promises = [dataservice.getCommons(), dataservice.getStyles()];
         return $q.all(promises).then(function(data) {
+            // console.log( data[0] );
+            $rootScope.title = data[0].title;
 
-            $rootScope.primaryFont = data[0].styleOptions.type.primaryFont;
-            $rootScope.secondaryFont = data[0].styleOptions.type.secondaryFont
+            $rootScope.primaryFont = data[1].styleOptions.type.primaryFont;
+            $rootScope.secondaryFont = data[1].styleOptions.type.secondaryFont
             $rootScope.style = 'body { font-family: "' + $rootScope.secondaryFont + '"; font-size: 1.8rem; }';
             $rootScope.style += 'h1,h2,h3,h4,h5,h6 { font-family: "' + $rootScope.primaryFont + '" }';
             
             var fonts = [];
-            for(var i in data[0].styleOptions.type) 
+            for(var i in data[1].styleOptions.type) 
             { 
-                fonts.push(data[0].styleOptions.type[i]);
+                fonts.push(data[1].styleOptions.type[i]);
             }
             $window.WebFont.load({
                 google: {

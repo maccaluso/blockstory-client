@@ -17,13 +17,14 @@
                     scope.rowCtrl.optionsT = [];
                     scope.rowCtrl.htmlParamsT = [];
                     scope.rowCtrl.collectionsT = [];
+                    scope.rowCtrl.switchesT = [];
                     var counter = 0;
 
                     var html = '';
 
                     html = '<div class="row">';
                     angular.forEach(scope.row.layout, function(value,key){
-                        var off = undefined;
+                        var off;
                         value.mdoffset ? off = ' col-md-offset-' + value.mdoffset : off = '';
                         html += '<div class="col-md-' + value.spanmd + off + '">';
                             html += '<' + value.directiveName;
@@ -31,11 +32,11 @@
                             scope.options = value.directiveOptions;
                             scope.htmlParams = value.directiveHtmlParams;
 
-                            // console.log( value );
                             scope.rowCtrl.optionsT[counter] = value.directiveOptions;
                             scope.rowCtrl.collectionsT[counter] = value.directiveCollections;
                             scope.rowCtrl.htmlParamsT[counter] = value.directiveHtmlParams;
-
+                            scope.rowCtrl.switchesT[counter] = value.directiveSwitches;
+                            
                             angular.forEach(value.directiveHtmlParams, function(v,k){
                                 html += ' ' + k + '="' + v + '"';
                             });
@@ -47,6 +48,15 @@
 
                     var e = $compile(html)(scope);
                     element.replaceWith(e);
+
+                    // function isEmpty(obj) {
+                    //     for(var prop in obj) {
+                    //         if(obj.hasOwnProperty(prop))
+                    //             return false;
+                    //     }
+
+                    //     return true && JSON.stringify(obj) === JSON.stringify({});
+                    // }
 
                 }
             }

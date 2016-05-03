@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('blocks.soundcloud', [
+        .module('blocks.bsbutton', [
         	'ngSanitize'
         	// 'firebase',
             // 'ngRoute',

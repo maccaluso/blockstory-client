@@ -1,0 +1,5 @@
+<ui-gmap-google-map center="map.center" zoom="map.zoom" options="mapOptions">
+	<ui-gmap-polyline path="steps" stroke="routeStroke" ng-if="showRoute"></ui-gmap-polyline>
+	<ui-gmap-markers models="markers" coords="'self'" options="markerOptions"></ui-gmap-markers>
+</ui-gmap-google-map>
+<p class="map-caption" ng-bind-html="caption"></p>

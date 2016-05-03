@@ -20,7 +20,7 @@
                     templateUrl: 'templates/frontend.html',
                     controller: 'FrontendController',
                     controllerAs: 'vm',
-                    title: 'Benvenuto!'
+                    title: ''
                 }
             }
         ];

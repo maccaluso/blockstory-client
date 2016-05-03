@@ -1,7 +1,7 @@
-body { -webkit-fon-smoothing: antialiased; }
+body { -webkit-font-smoothing: antialiased; }
 
 /**********************/
-/* HEADLINE DIRECTIVE */
+/* BS-HEADLINE DIRECTIVE */
 /**********************/
 
 .headline-container {
@@ -21,6 +21,7 @@ body { -webkit-fon-smoothing: antialiased; }
 		padding: $basePadding*2;
 		color: $white;
 		font-size: $baseFontSize*1.5;
+		z-index: 10;
 
 		.headline-about-link-flag:hover { cursor: pointer; }
 		.headline-about-content {
@@ -33,41 +34,42 @@ body { -webkit-fon-smoothing: antialiased; }
 	}
 
 	.headline-main-title { 
-	    position: absolute; 
-	    bottom: 0; 
-	    background: $transparentBlack50; 
-	    color: $white; 
-	    margin-bottom: 0; 
-	    padding: 0 $basePadding;
-	    text-align: center;
-	    height: 60%;
+		position: absolute; 
+		bottom: 0; 
+		background: $transparentBlack50; 
+		color: $white; 
+		margin-bottom: 0; 
+		padding: 0 $basePadding;
+		text-align: center;
 
-	    .headline-sharing {
-	    	a { 
-	    		padding: $basePadding - 10;
-	    		margin: $basePadding*2 0;
-	    		background: $pink;
-	    		border: 1px solid $pink;
-	    		color: $white;
-	    		font-weight: 300;
-	    		@include transition( all 500ms ease-in-out );
-	    	}
-	    	a:hover { background: transparent; }
-	    	.fb:before { content: 'Share on facebook'; }
-	    	.tw:before { content: 'Share on twitter'; }
-	    }
-	    .headline-scroll-down {
-	    	background: url(../img/u213.png) no-repeat 50% transparent;
-	    	height: 100px;
-	    	min-width: 100px;
-	    	padding: $basePadding;
-	    }
-	    .headline-scroll-down:hover { cursor: pointer; opacity: 0.75; }
+		.headline-main-title-inner {
+			position: relative;
+			top: 50%;
+			opacity: 0;
+			@include transition(opacity 1500ms ease-out);
+
+			.headline-sharing {
+				a { 
+					padding: $basePadding - 10;
+					margin: $basePadding*2 0;
+					background: $pink;
+					border: 1px solid $pink;
+					color: $white;
+					font-weight: 300;
+					@include transition( all 500ms ease-in-out );
+				}
+				a:hover { background: transparent; }
+				// .fb:after { content: 'Share on facebook'; }
+				// .tw:after { content: 'Share on twitter'; }
+			}
+			.headline-scroll-down {
+				background: url(../img/scrolldown.png) no-repeat 50% transparent;
+				height: 100px;
+				min-width: 100px;
+				padding: $basePadding;
+			}
+			.headline-scroll-down:hover { cursor: pointer; opacity: 0.75; }
+		}
+		.headline-main-title-inner.show { opacity: 1; }
 	}
 }
-
-/*****************/
-/* MAP DIRECTIVE */
-/*****************/
-
-// .angular-google-map-container { height: 200px; }

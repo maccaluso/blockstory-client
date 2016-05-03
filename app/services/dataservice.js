@@ -13,11 +13,27 @@
         ENV.remote ? basePath = 'http://5.101.98.193:3000/api/stories/' : basePath = 'http://localhost:3000/api/stories/';
         
         var service = {
+            getCommons: getCommons,
             getStyles: getStyles,
             getStory: getStory
         };
 
         return service;
+
+        function getCommons() {
+            var commonsEndpoint = basePath + storyID + '?filter[fields][styleOptions]=false&filter[fields][layout]=false';
+
+            return $http.get(commonsEndpoint)
+                .then(getCommonsComplete)
+                .catch(getCommonsFailed);
+
+            function getCommonsComplete(response) {
+                return response.data;
+            }
+            function getCommonsFailed(error) {
+                console.log('XHR Failed for getQuestions.' + error.data);
+            }
+        }
 
         function getStyles() {
             var stylesEndpoint = basePath + storyID + '?filter[fields][styleOptions]=true';
@@ -35,7 +51,7 @@
         }
 
         function getStory() {
-            var storyEndpoint = basePath + storyID + '?filter[fields][layout]=true';
+            var storyEndpoint = basePath + storyID + '?filter[fields][layout]=true&filter[order]=rowOrder%20DESC';
             
             return $http.get(storyEndpoint)
                 .then(getStoryComplete)

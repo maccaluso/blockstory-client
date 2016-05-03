@@ -9,6 +9,7 @@
             'blocks.text',
             'blocks.videoembed',
             'blocks.soundcloud',
-            'blocks.map'
+            'blocks.map',
+            'blocks.bsbutton'
         ]);
 })();

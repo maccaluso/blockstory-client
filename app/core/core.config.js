@@ -5,7 +5,7 @@
 
     var config = {
         appErrorPrefix: '[BSClient Error] ',
-        appTitle: 'Blockstory Client'
+        appTitle: 'Blockstory'
     };
 
     core.value('config', config);

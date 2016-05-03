@@ -18,5 +18,8 @@
     "url": ""
   },
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "gulp-rename": "^1.2.2"
+  }
 }

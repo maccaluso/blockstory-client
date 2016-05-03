@@ -3,6 +3,7 @@ var	gulp = require('gulp'), 
 		notify = require("gulp-notify") 
 		path = require('path'),
 		fs = require('fs'),
+		rename = require('gulp-rename'),
 		concat = require('gulp-concat'),
 		uglify = require('gulp-uglify'),
 		ngAnnotate = require('gulp-ng-annotate'),
@@ -17,8 +18,10 @@ var config = {
 	appDir: './app',
 	appJs: [
 	'./app/**/*.module.js',
-	'./app/**/*.js'
-	]
+	'./app/**/*.js',
+	'!./app/core/core.constants.js'
+	],
+	constantsJs: './app/core/core.constants.js'
 }
 
 gulp.task('bower', function() {
@@ -78,10 +81,22 @@ function onAppError(err){
 	this.emit('end');
 }
 
-gulp.task('watch', function() {
-	gulp.watch(config.bowerDir + '/**/*.*', ['bower']); 
-	  gulp.watch(config.sassPath + '/**/*.scss', ['css']); 
-	gulp.watch(config.appDir + '/**/*.js', ['app']); 
+gulp.task('bs-config-file',function(){
+	return gulp.src(config.constantsJs)
+	.pipe(rename('bs-config.js'))
+	.pipe(gulp.dest('./dist/js'));
+})
+
+gulp.task('templates', function() {
+    gulp.src( config.appDir + '/blocks/**/*.html' )
+    .pipe( gulp.dest('./dist/templates/blocks') );
 });
 
-gulp.task('default', ['bower', 'css', 'app', 'watch']);
+gulp.task('watch', function() {
+	gulp.watch( config.bowerDir + '/**/*.*', ['bower'] ); 
+	  gulp.watch( config.sassPath + '/**/*.scss', ['css'] ); 
+	gulp.watch( config.appDir + '/**/*.js', ['app'] ); 
+	gulp.watch( config.appDir + '/blocks/**/*.html', ['templates'] ); 
+});
+
+gulp.task('default', ['bower', 'css', 'app', 'bs-config-file', 'templates', 'watch']);

@@ -3,7 +3,7 @@
 
     angular
         .module('blocks.videoembed')
-        .directive('videoembed', function($window){
+        .directive('videoembed', function($window, youtubeApiService){
             return {
                 restrict: 'E',
                 template: '<div></div>',
@@ -12,19 +12,37 @@
                     counter: '='
                 },
                 link: function(scope, element, attrs){
-                    var options = scope.$parent.rowCtrl.optionsT[scope.counter];
-                    switch(options.videoHost)
+                    scope.options = scope.$parent.rowCtrl.optionsT[scope.counter];
+                    scope.params = scope.$parent.rowCtrl.htmlParamsT[scope.counter];
+                    
+                    switch(scope.options.videoHost)
                     {
                         case 'youtube':
-                            var tag = document.createElement('script');
-                            tag.src = "https://www.youtube.com/iframe_api";
-                            var firstScriptTag = document.getElementsByTagName('script')[0];
-                            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                            var scripts = document.getElementsByTagName('script');
+                            var createScriptTag = true;
+                            for (var i = scripts.length; i--;) {
+                                if (scripts[i].src == 'https://www.youtube.com/iframe_api')
+                                {
+                                    createScriptTag = false;
+                                }
+                            }
+                            if( createScriptTag )
+                            {
+                                var tag = document.createElement('script');
+                                tag.src = "https://www.youtube.com/iframe_api";
+                                var firstScriptTag = document.getElementsByTagName('script')[0];
+                                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                            }
 
                             var player;
 
-                            $window.onYouTubeIframeAPIReady = function() {
-                                player = new YT.Player(element[0], {
+                            youtubeApiService.onReady(function() {
+                                player = setupPlayer(scope, element);
+                            });
+
+                            function setupPlayer(scope, element) {
+                                return new YT.Player( scope.params.id, {
                                     playerVars: {
                                         autoplay: 0,
                                         html5: 1,
@@ -36,9 +54,10 @@
                                         controls: 1,
                                     },
                                     width: '100%',
-                                    videoId: options.videoID,
+                                    videoId: scope.options.videoID,
                                 });
                             }
+                            
                             break;
                         case 'vimeo':
                             break;

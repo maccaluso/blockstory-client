@@ -82,23 +82,23 @@
 
             function init() {
                 handleRoutingErrors();
-                updateDocTitle();
+                // updateDocTitle();
                 manageLoadingScreen();
             }
 
             function getStates() { return $state.get(); }
 
-            function updateDocTitle() {
-                $rootScope.$on('$stateChangeSuccess',
-                    function(event, toState, toParams, fromState, fromParams) {
-                        stateCounts.changes++;
-                        handlingStateChangeError = false;
-                        var title = config.docTitle + ' ' + (toState.title || '');
-                        $rootScope.title = title;
-                        $rootScope.baseHref = config.baseHref;
-                    }
-                );
-            }
+            // function updateDocTitle() {
+            //     $rootScope.$on('$stateChangeSuccess',
+            //         function(event, toState, toParams, fromState, fromParams) {
+            //             stateCounts.changes++;
+            //             handlingStateChangeError = false;
+            //             var title = config.docTitle + ' ' + (toState.title || '');
+            //             $rootScope.title = title;
+            //             $rootScope.baseHref = config.baseHref;
+            //         }
+            //     );
+            // }
 
             // function isHome() {
             //     $rootScope.$on('$stateChangeSuccess',
