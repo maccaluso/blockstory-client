@@ -33,4 +33,4 @@ bower_components
 .sass-cache
 
 # App config
-dist/js/bs-config.js
+# dist/js/bs-config.js
