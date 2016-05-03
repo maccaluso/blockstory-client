@@ -42,7 +42,11 @@
                             });
 
                             function setupPlayer(scope, element) {
-                                return new YT.Player( scope.params.id, {
+                                
+                                var containerID = scope.params.id || 'YTVideo' + Date.now();
+                                element.attr('id', containerID);
+                                
+                                return new YT.Player( containerID, {
                                     playerVars: {
                                         autoplay: 0,
                                         html5: 1,
@@ -62,6 +66,8 @@
                         case 'vimeo':
                             break;
                     }
+
+                    element.after('<p class="video-caption">' + scope.options.caption + '</p>');
                 }
             }
         })
