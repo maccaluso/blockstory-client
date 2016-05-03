@@ -3,6 +3,7 @@
 
     angular
         .module('blocks.headline', [
-            'duScroll'
+            'duScroll',
+            'ngSanitize'
         ]);
 })();

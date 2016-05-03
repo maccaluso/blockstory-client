@@ -2,15 +2,15 @@
 	
 	<div class="headline-about-link">
 		<span class="headline-about-link-flag">{{options.aboutLinkFlag}}</span>
-		<div class="headline-about-content">{{options.aboutContent}}</div>
+		<div class="headline-about-content" ng-bind-html="options.aboutContent"></div>
 	</div>
 
 	<div class="headline-logo"></div>
 
 	<div class="headline-main-title col-md-12" style="height: {{options.overlayHeight}};">
 		<div class="headline-main-title-inner clearfix">
-			<h1 class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">{{options.title}}</h1>
-			<h4 class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">{{options.subtitle}}</h4>
+			<h1 class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3" ng-bind-html="options.title"></h1>
+			<h4 class="col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3" ng-bind-html="options.subtitle"></h4>
 			
 			<div class="headline-sharing col-md-6 col-md-offset-3 col-xs-6 col-xs-offset-3">
 				<a class="headline-share-link fb btn">
