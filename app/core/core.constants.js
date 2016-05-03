@@ -8,6 +8,6 @@
         .constant('baseHref', '/')
         .constant('ENV', {
         	remote: true,
-        	mode: 'dev'
+        	mode: 'production'
         })
 })();
