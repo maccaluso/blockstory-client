@@ -95,7 +95,7 @@ gulp.task('templates', function() {
 gulp.task('watch', function() {
 	gulp.watch( config.bowerDir + '/**/*.*', ['bower'] ); 
 	  gulp.watch( config.sassPath + '/**/*.scss', ['css'] ); 
-	gulp.watch( config.appDir + '/**/*.js', ['app'] ); 
+	gulp.watch( config.appDir + '/**/*.js', ['app', 'bs-config-file'] ); 
 	gulp.watch( config.appDir + '/blocks/**/*.html', ['templates'] ); 
 });
 
