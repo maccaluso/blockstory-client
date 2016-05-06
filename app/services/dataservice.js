@@ -14,6 +14,7 @@
         
         var service = {
             getCommons: getCommons,
+            getFooter: getFooter,
             getStyles: getStyles,
             getStory: getStory
         };
@@ -31,7 +32,22 @@
                 return response.data;
             }
             function getCommonsFailed(error) {
-                console.log('XHR Failed for getQuestions.' + error.data);
+                console.log('XHR Failed for getCommons.' + error.data);
+            }
+        }
+
+        function getFooter() {
+            var footerEndpoint = basePath + storyID + '?filter[fields][footer]=true';
+
+            return $http.get(footerEndpoint)
+                .then(getFooterComplete)
+                .catch(getFooterFailed);
+
+            function getFooterComplete(response) {
+                return response.data;
+            }
+            function getFooterFailed(error) {
+                console.log('XHR Failed for getFooter.' + error.data);
             }
         }
 
@@ -46,7 +62,7 @@
                 return response.data;
             }
             function getStylesFailed(error) {
-                console.log('XHR Failed for getQuestions.' + error.data);
+                console.log('XHR Failed for getStyles.' + error.data);
             }
         }
 
@@ -61,7 +77,7 @@
                 return response.data;
             }
             function getStoryFailed(error) {
-                console.log('XHR Failed for getQuestions.' + error.data);
+                console.log('XHR Failed for getStory.' + error.data);
             }
         }
     }

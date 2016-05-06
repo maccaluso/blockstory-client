@@ -18,6 +18,7 @@
                     scope.rowCtrl.htmlParamsT = [];
                     scope.rowCtrl.collectionsT = [];
                     scope.rowCtrl.switchesT = [];
+                    scope.rowCtrl.radiosT = [];
                     var counter = 0;
 
                     var html = '';
@@ -36,6 +37,7 @@
                             scope.rowCtrl.collectionsT[counter] = value.directiveCollections;
                             scope.rowCtrl.htmlParamsT[counter] = value.directiveHtmlParams;
                             scope.rowCtrl.switchesT[counter] = value.directiveSwitches;
+                            scope.rowCtrl.radiosT[counter] = value.directiveRadios;
                             
                             angular.forEach(value.directiveHtmlParams, function(v,k){
                                 html += ' ' + k + '="' + v + '"';

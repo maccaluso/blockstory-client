@@ -2,17 +2,17 @@
     'use strict';
 
     angular
-        .module('app.frontend')
-        .filter('object2Array', function() {
-            return function(input) {
-                var out = []; 
-                for(var i in input){
-                    out.push(input[i]);
-                }
-                return out;
+    .module('app.frontend')
+    .filter('object2Array', function() {
+        return function(input) {
+            var out = []; 
+            for(var i in input){
+                out.push(input[i]);
             }
-        })
-        .controller('FrontendController', FrontendController);
+            return out;
+        }
+    })
+    .controller('FrontendController', FrontendController);
 
     FrontendController.$inject = ['$window', '$state', '$q', '$scope', 'dataservice'];
     

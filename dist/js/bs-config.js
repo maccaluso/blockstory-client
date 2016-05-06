@@ -3,10 +3,10 @@
 
     angular
         .module('app.core')
-        .constant('storyID', 'YOUR_STORY_ID_HERE')
+        .constant('storyID', '56241f8e2ff172ce01732d04')
         .constant('baseHref', '/')
         .constant('ENV', {
-        	remote: true,
+        	remote: false,
         	mode: 'production'
         })
 })();

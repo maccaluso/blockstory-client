@@ -27,8 +27,21 @@
                     scope.opt = scope.$parent.rowCtrl.optionsT[scope.counter];
 
                     scope.switches = scope.$parent.rowCtrl.switchesT[scope.counter];
-                    scope.switches.stickToTop ? scope.bsButtonPosition = stickToTopStyles : scope.bsButtonPosition = "{}";
-                    scope.switches.stickToBottom ? scope.bsButtonPosition = stickToBottomStyles : scope.bsButtonPosition = "{}";
+                    if( scope.switches.blockBtn ) { stickToTopStyles.width = stickToBottomStyles.width = '100%' }
+                    
+                    scope.radios = scope.$parent.rowCtrl.radiosT[scope.counter];
+                    switch( scope.radios.stick.value )
+                    {
+                        case 'top':
+                            scope.bsButtonPosition = stickToTopStyles;
+                            break;
+                        case 'bottom':
+                            scope.bsButtonPosition = stickToBottomStyles;
+                            break;
+                        case 'none':
+                            scope.bsButtonPosition = "{}";
+                            break;
+                    }
 		        }
             }
         })
