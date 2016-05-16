@@ -22,7 +22,13 @@
         return service;
 
         function getCommons() {
-            var commonsEndpoint = basePath + storyID + '?filter[fields][styleOptions]=false&filter[fields][layout]=false';
+            // var commonsEndpoint = basePath + storyID + '?filter[fields][styleOptions]=false&filter[fields][layout]=false';
+            var filterString = '?filter[fields][opengraph]=true';
+            filterString += '&filter[fields][title]=true';
+            // filterString += '&filter[fields][storyID]=true';
+
+            // var commonsEndpoint = basePath + storyID + '?filter[fields][opengraph]=true&filter[fields][title]=true';
+            var commonsEndpoint = basePath + storyID + filterString;
 
             return $http.get(commonsEndpoint)
                 .then(getCommonsComplete)
