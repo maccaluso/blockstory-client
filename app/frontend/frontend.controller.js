@@ -24,11 +24,13 @@
 
         function activate() {
             var promises = [dataservice.getStory()];
-            return $q.all(promises).then(function(data) {
+            return $q.all(promises).then( function(data) {
                                 
                 vm.rows = data[0].layout.rows;
                 
                 vm.hideSpinner = true;
+            }, function(reason){
+                alert( reason );
             });
         }
     }

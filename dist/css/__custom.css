@@ -1,0 +1,173 @@
+h1 { font-weight: 900; font-size: 48px;}
+
+ul li { padding-top: 1vh; }
+
+h4 span { font-family: "Source Sans Pro", Helvetica,Arial,sans-serif; font-weight:400;}
+
+ a:link { color:#EDC783; }
+ a:visited { color: inherit; }
+
+.didaimg .img-caption, .video-caption {
+	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+	font-size: 0.5em;
+ 	margin-top: 20px;
+	color: #888 ;	
+}
+
+.didaimg .ng-binding {
+	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+	font-size: 0.5em;
+ 	margin-top: 10px;
+	color: #888 ;	
+}
+
+
+.sources {
+	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;
+	font-size: 0.75em;
+	color: #aaa ;
+}
+
+.sources a:link { color:#EDC783; }
+.sources a:visited { color: inherit; }
+
+
+/* STYLING SHARE LINKS*/
+.headline-container .headline-main-title .headline-main-title-inner .headline-sharing a { background: transparent; border:none;}
+/* .headline-container .headline-main-title .headline-main-title-inner .headline-sharing a:hover { background: transparent; border: #edc783;} */
+
+
+/* STYLING DIRETTIVA NAVIGAZIONE A FONDO PAGINA*/
+.mainLabel {	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;}
+.secondaryLabel {	font-family: "Source Sans Pro", Helvetica,Arial,sans-serif;}
+
+
+
+/* IMGRESPONSIVE: Quando gruppo di immagini su piů file, per spaziare meno tra le ROW di immagini*/
+
+#imageAlsoAfter {
+	margin-bottom: -50px;
+}
+
+
+/* WORKAROUND BOOTSTRAP IMG RESPONSIVE */
+.img-responsive { width: 100%; }
+
+/* ESEMPIO STYLING FOOTER */
+footer { height: 3vh; 	/* background-color: white!important; */ border-top: 1px solid #eee; }
+footer h6 { background-color: #282930; margin: 0; padding: 7px 10px;}
+footer h6 a {color:#edc783;}
+footer h6 a:hover {color:#fff;}
+
+/*  STYLING BOTTOM NAV FIXED */
+.navLabels { background-color: rgba(255,255,255,0.9); }
+.navLabels a { font-family:"Lato", Helvetica,Arial,sans-serif; font-weight:900; font-size:1em; margin-bottom: 5px; margin-top: 10px; color:#666;}
+.navLabels a p {font-family:"Source Sans Pro", Helvetica,Arial,sans-serif; font-weight:300; font-size:0.75em; color:#999;}
+/* STYLING BACK BUTTON */
+#backBtn { /* background-color: rgba(255,255,255,0.15); */ color:#333;}
+#backBtn a { font-family:"Source Sans Pro", Helvetica,Arial,sans-serif;  color: #333; }
+#backBtn a:hover { color: #ccc; }
+#backBtn a p {  margin: 10px 0 10px 0 ; }
+#backBtn a img { width: 25px; height:25px; margin-top: -5px; }
+
+
+/*  BREAKPOINT PER IPAD E IPHONE */
+
+/* ---------------------------------------------------------------- iPAD [landscape] */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+	.mobileBody span { display: inline-block; padding: 0 10vw 0 10vw;  /* font-size:1.25em; */ }
+	.sources { display: inline-block; padding: 0 10vw 0 10vw; }
+	.mobileImg {display: inline-block; padding: 0 10vw 0 10vw;}
+	#imageAlsoAfter { margin-bottom: 0px; }
+/* 	.mobile h1 { font-size: 2.5em; font-weight:900; }
+	.mobile h4 { font-size: 1.1em;  }	 */
+	}
+	
+/* ---------------------------------------------------------------- iPAD [portrait] */ 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	.mobileBody span { display: inline-block; padding: 0 10vw 0 10vw; font-size:1.25em; }
+	.sources { display: inline-block; padding: 0 10vw 0 10vw; }
+	.mobileImg {display: inline-block; padding: 0 10vw 0 10vw;}
+	#imageAlsoAfter { margin-bottom: 0px; }
+	.mobileTitle h1 { font-size: 3.0em; font-weight:900; }
+	.mobileTitle h4 { font-size: 1.25em;  }
+	#bigMobileAudio iframe { height: 170px;}
+	
+	}
+	
+	
+	
+
+	
+/* ---------------------------------------------------------------- iPHONE [portrait] */    
+/* iPhone 5+5S [portrait] */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { 
+	.mobileBody span { display: inline-block; font-size:3em; padding: 0 3vw 0 3vw;}
+	#imageAlsoAfter { margin-bottom: 0px; }
+	.mobileTitle h1 { font-size: 5em;  }
+	.mobileTitle h4 { font-size: 2.75em;  padding:0 0 0 0;}
+	#bigMobileAudio iframe { height: 30vh;}
+	.didaimg .img-caption, .didaimg .ng-binding {font-size:2.3em; padding: 0 3vw 0 3vw;}
+	.sources { display: inline-block; font-size:2.3em; padding: 6vw 3vw 9vw 3vw; }
+	.navLabels a { font-family:"Lato", Helvetica,Arial,sans-serif; font-weight:900; font-size:3em; color:#666;}
+	.navLabels a p { font-family:"Source Sans Pro", Helvetica,Arial,sans-serif; font-weight:300; font-size:0.7em; color:#999;}
+	.navLabels a img { width:67px; height:100px;}
+	#backBtn {width:100vw; background-color: rgba(255,255,255,1);}
+	#backBtn a {font-size:0.75em;}
+	#backBtn a img{width: 85px; height:85px;}
+	div.headline-scroll-down { height:100px; background-size: cover;}
+	/* .gm-style img {height:100px; width:100px;} */
+/* 	ul li { padding-top: 1em; } */
+}
+
+ 
+ @media only screen and (max-device-width: 480px) and (orientation: portrait) {
+	.mobileBody span { display: inline-block; font-size:3em; padding: 0 3vw 0 3vw;}
+	#imageAlsoAfter { margin-bottom: 0px; }
+	.mobileTitle h1 { font-size: 5em;  }
+	.mobileTitle h4 { font-size: 2.75em; padding:0 0 0 0; }
+	#bigMobileAudio iframe { height: 30vh;}
+	.didaimg .img-caption, .didaimg .ng-binding {font-size:2.3em; padding: 0 3vw 0 3vw;}
+	.sources { display: inline-block; font-size:2.3em; padding: 6vw 3vw 9vw 3vw; }
+	.navLabels  p { font-size:3em;}
+	#backBtn {width:100vw; font-size:3em; background-color: rgba(255,255,255,1);}
+	.navLabels a { font-family:"Lato", Helvetica,Arial,sans-serif; font-weight:900; font-size:3em; color:#666;}
+	.navLabels a p { font-family:"Source Sans Pro", Helvetica,Arial,sans-serif; font-weight:300; font-size:0.7em; color:#999;}
+	.navLabels a img { width:67px; height:100px;}
+	#backBtn a {font-size:0.75em;}
+	#backBtn a img{width: 85px; height:85px;}
+	div.headline-scroll-down { height:100px; background-size: cover;}
+	footer { height: 3vh;}
+	.headline-sharing a img{height:100px;}
+	
+
+/* 	ul li { padding-top: 1em; } */
+}
+
+
+/* ---------------------------------------------------------------- iPHONE [landscape] */
+/* iPhone 5+5S [landscape] */
+	@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) { 
+	.mobileBody span { display: inline-block; font-size:1.5em; padding: 0 5vw 0 5vw; }
+	#imageAlsoAfter { margin-bottom: 0px; }
+	.mobileTitle h1 { font-size: 3em;  }
+	.mobileTitle h4 { font-size: 1.5em;  }
+	#bigMobileAudio iframe { height: 30vh;}
+	.didaimg .img-caption, .didaimg .ng-binding {font-size:1.3em; padding: 0 5vw 0 5vw;}
+	.sources { display: inline-block; font-size:1.3em; padding: 0 5vw 7vw 5vw; }
+	.navLabels .ng-binding p { font-size:1.5em;}
+/* 	ul li { padding-top: 1em; } */
+}
+
+
+@media only screen and (max-device-width: 480px) and (orientation: landscape) {
+	.mobileBody span { display: inline-block; font-size:1.5em; padding: 0 5vw 0 5vw; }
+	#imageAlsoAfter { margin-bottom: 0px; }
+	.mobileTitle h1 { font-size: 3em;  }
+	.mobileTitle h4 { font-size: 1.5em;  }
+	#bigMobileAudio iframe { height: 30vh;}
+	.didaimg .img-caption, .didaimg .ng-binding {font-size:1.3em; padding: 0 5vw 0 5vw;}
+	.sources { display: inline-block; font-size:1.3em; padding: 0 5vw 7vw 5vw; }
+	.navLabels .ng-binding p { font-size:1.5em;}
+/* 	ul li { padding-top: 1em; } */
+}

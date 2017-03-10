@@ -21,13 +21,15 @@
                     scope.rowCtrl.radiosT = [];
                     var counter = 0;
 
-                    var html = '';
+                    scope.rowStyles = {};
+                    if( scope.row.resetRowPadding ) { scope.rowStyles.paddingLeft = '0', scope.rowStyles.paddingRight = '0' };
 
+                    var html = '';
                     html = '<div class="row">';
                     angular.forEach(scope.row.layout, function(value,key){
                         var off;
                         value.mdoffset ? off = ' col-md-offset-' + value.mdoffset : off = '';
-                        html += '<div class="col-md-' + value.spanmd + off + '">';
+                        html += '<div class="col-md-' + value.spanmd + off + '" ng-style="rowStyles">';
                             html += '<' + value.directiveName;
                             
                             scope.options = value.directiveOptions;
@@ -50,15 +52,6 @@
 
                     var e = $compile(html)(scope);
                     element.replaceWith(e);
-
-                    // function isEmpty(obj) {
-                    //     for(var prop in obj) {
-                    //         if(obj.hasOwnProperty(prop))
-                    //             return false;
-                    //     }
-
-                    //     return true && JSON.stringify(obj) === JSON.stringify({});
-                    // }
 
                 }
             }

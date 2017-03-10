@@ -56,6 +56,7 @@
                                         iv_load_policy: 3,
                                         showinfo: 0,
                                         controls: 1,
+                                        rel: 0
                                     },
                                     width: '100%',
                                     videoId: scope.options.videoID,

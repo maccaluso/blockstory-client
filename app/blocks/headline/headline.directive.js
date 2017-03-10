@@ -42,8 +42,9 @@
                             backgroundImage: 'url(' + options.logoUrl + ')'
                         });
 
-                        element.find('h1').css({fontFamily: $rootScope.primaryFont});
-                        element.find('h4').css({fontFamily: $rootScope.secondaryFont});
+                        element.find('h1').css({fontFamily: '"' + $rootScope.primaryFont + '"'});
+                        element.find('h4').css({fontFamily: '"' + $rootScope.secondaryFont + '"'});
+                        console.log( $rootScope.primaryFont );
                         element.find('a').css({fontFamily: $rootScope.primaryFont}).attr('target','blank');
 
                         fb.attr('href','https://www.facebook.com/sharer/sharer.php?u=' + $location.$$absUrl);

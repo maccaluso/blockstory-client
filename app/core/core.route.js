@@ -20,13 +20,18 @@
             $rootScope.style = 'body { font-family: "' + $rootScope.secondaryFont + '"; font-size: 1.8rem; }';
             $rootScope.style += 'h1,h2,h3,h4,h5,h6 { font-family: "' + $rootScope.primaryFont + '" }';
 
-            // console.log( data[0].opengraph.image );
             $rootScope.opengraph = {
-                'image': data[0].opengraph.image,
+                'image': '',
                 'title': $rootScope.title,
                 'url': $location.$$absUrl,
-                'site_name': data[0].opengraph.site_name,
-                'type': data[0].opengraph.type
+                'site_name': '',
+                'type': ''
+            }
+            if( data[0].opengraph != undefined )
+            {
+                $rootScope.opengraph.image = data[0].opengraph.image;
+                $rootScope.opengraph.site_name = data[0].opengraph.site_name;
+                $rootScope.opengraph.type = data[0].opengraph.type;
             }
             
             var fonts = [];

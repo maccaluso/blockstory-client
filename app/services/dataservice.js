@@ -38,7 +38,7 @@
                 return response.data;
             }
             function getCommonsFailed(error) {
-                console.log('XHR Failed for getCommons.' + error.data);
+                console.log('XHR Failed for getCommons.', error.data);
             }
         }
 
@@ -53,7 +53,7 @@
                 return response.data;
             }
             function getFooterFailed(error) {
-                console.log('XHR Failed for getFooter.' + error.data);
+                console.log('XHR Failed for getFooter.', error.data);
             }
         }
 
@@ -68,7 +68,7 @@
                 return response.data;
             }
             function getStylesFailed(error) {
-                console.log('XHR Failed for getStyles.' + error.data);
+                console.log('XHR Failed for getStyles.', error.data);
             }
         }
 
@@ -83,7 +83,8 @@
                 return response.data;
             }
             function getStoryFailed(error) {
-                console.log('XHR Failed for getStory.' + error.data);
+                console.log('XHR Failed for getStory.', error.data);
+                return error.data;
             }
         }
     }
